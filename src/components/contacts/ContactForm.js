@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form'
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { email as emailValidator, firstName as firstNameValidator, lastName as lastNameValidator } from '../../utilities/validation'
 
-const renderField = ({ input, label, type, meta: { touched, error, warning } }) => {
+const renderField = ({ input, label, type, meta: { touched, error } }) => {
   const status = ((touched && (error ? 'danger' : 'success')) || '')
 
   return (<FormGroup color={status}>

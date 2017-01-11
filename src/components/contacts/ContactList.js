@@ -14,17 +14,17 @@ const ContactList = ({ contacts, onRemove }) => (
       </Col>
     </Row>
     <hr/>
-    <Row>
-      {contacts.map(contact =>
-        <Col key={contact.id} xs="12" sm="6" md="4" lg="3">
-          <ContactListItem
-            key={contact.id}
-            {...contact}
-            onRemove={onRemove}
-          />
-        </Col>
-      )}
-    </Row>
+    {contacts.length > 0 ? (
+      <Row>
+        {contacts.map(contact =>
+          <Col key={contact.id} xs="12" sm="6" md="4" lg="3">
+            <ContactListItem {...contact} onRemove={onRemove}/>
+          </Col>
+        )}
+      </Row>
+    ) : (
+      <p>Your contacts list is empty.</p>
+    )}
   </div>
 )
 

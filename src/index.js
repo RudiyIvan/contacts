@@ -6,8 +6,8 @@ import { createStore } from 'redux';
 import { Router, Route, browserHistory } from 'react-router'
 
 import reducer from './reducers'
-import ContactListContainer from './containers/contacts/ContactListContainer';
-import ContactFormContainer from './containers/contacts/ContactFormContainer';
+import ContactList from './containers/contacts/ContactList';
+import ContactForm from './containers/contacts/ContactForm';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -16,9 +16,9 @@ let store = createStore(reducer);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={browserHistory}>
-      <Route path="/" component={ContactListContainer}/>
-      <Route path="/contact" component={ContactFormContainer}>
-        <Route path=":id" component={ContactFormContainer}/>
+      <Route path="/" component={ContactList}/>
+      <Route path="/contact" component={ContactForm}>
+        <Route path=":id" component={ContactForm}/>
       </Route>
     </Router>
   </Provider>,

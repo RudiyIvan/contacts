@@ -1,7 +1,7 @@
+import { browserHistory } from 'react-router';
+import { connect } from 'react-redux'
 import { addContact, updateContact } from '../../actions/contacts'
 import ContactForm from '../../components/contacts/ContactForm'
-import { connect } from 'react-redux'
-import { browserHistory } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   const id = parseInt(ownProps.params.id, 10)
@@ -21,12 +21,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         dispatch(addContact(values.firstName, values.lastName, values.email))
       }
 
-      browserHistory.push('/');
+      browserHistory.push('/')
     }
   }
 }
 
-let ContactFormContainer = connect(
+const ContactFormContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(ContactForm)

@@ -38,7 +38,7 @@ const contacts = (state = response, action) => {
           return contact(undefined, action)
         }
 
-        return Object.assign({}, item);
+        return Object.assign({}, item)
       })
     case 'REMOVE_CONTACT':
       return state.filter((item) => (item.id !== action.id))

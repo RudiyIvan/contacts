@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router'
-import { Card, CardImg, CardBlock, CardTitle, CardSubtitle, CardLink } from 'reactstrap';
+import { Card, CardBlock, CardTitle, CardSubtitle, CardLink } from 'reactstrap';
+import Gravatar from 'react-gravatar'
 
 function ContactListItem(props) {
   return (
     <Card className="mb-3">
-      <CardImg top width="100%" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?s=256" alt="Photo" />
+      <Gravatar className="card-img-top" width="100%" email={props.email} size={256}/>
       <CardBlock>
         <CardTitle>{props.firstName} {props.lastName}</CardTitle>
         <CardSubtitle>

@@ -13,7 +13,7 @@ export const firstName = (firstName) => {
 }
 
 export const lastName = (lastName) => {
- if (!lastName) {
+  if (!lastName) {
     return 'Last name is required'
   }
 }
